@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday Nur Islam Tanha 🎂</title>
+
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  overflow-x: hidden;
+  font-family: "Noto Sans Bengali", Arial, sans-serif;
+  color: white;
+  text-align: center;
+  background: radial-gradient(circle at top, #62228f, #19072f 75%);
+}
+
+.container {
+  width: 100%;
+  min-height: 100vh;
+  padding: 35px 16px 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card {
+  width: 100%;
+  max-width: 470px;
+  padding: 27px 19px;
+  border: 1px solid #ffffff45;
+  border-radius: 28px;
+  background: #ffffff12;
+  box-shadow: 0 0 45px #ed54ff25;
+  backdrop-filter: blur(12px);
+  position: relative;
+  z-index: 2;
+}
+
+.tag {
+  color: #ffe28a;
+  letter-spacing: 3px;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+h1 {
+  font-size: clamp(27px, 7vw, 39px);
+  color: #ffe18a;
+  text-shadow: 0 0 18px #ff70c7;
+  margin: 15px 0;
+}
+
+.name {
+  font-size: clamp(22px, 6vw, 31px);
+  overflow-wrap: anywhere;
+  color: #ffb8e6;
+  text-shadow: 0 0 15px #ff40b5;
+}
+
+.subtitle {
+  line-height: 1.9;
+  font-size: 16px;
+  color: #fff1ff;
+}
+
+.cake-scene {
+  height: 230px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  perspective: 700px;
+}
+
+.cake {
+  position: relative;
+  width: 180px;
+  height: 150px;
+  transform-style: preserve-3d;
+  animation: cakeFloat 3s ease-in-out infinite;
+}
+
+.cake-bottom {
+  position: absolute;
+  width: 180px;
+  height: 75px;
+  left: 0;
+  bottom: 10px;
+  border-radius: 12px 12px 22px 22px;
+  background: linear-gradient(90deg, #d52d75, #ffb0d5, #e54c96);
+  box-shadow: 0 14px 25px #0005;
+}
+
+.cake-top {
+  position: absolute;
+  width: 180px;
+  height: 48px;
+  left: 0;
+  bottom: 65px;
+  border-radius: 50%;
+  background: linear-gradient(120deg, #ffe3ef, #ff81b9, #fff0fa);
+  border-bottom: 7px solid #e94d9c;
+}
+
+.icing {
+  position: absolute;
+  top: 44px;
+  left: 0;
+  width: 180px;
+  height: 30px;
+  border-radius: 0 0 20px 20px;
+  background: #ffacd3;
+  z-index: 2;
+}
+
+.icing::before {
+  content: "●  ●  ●  ●  ●";
+  color: #fff2a6;
+  font-size: 13px;
+  position: absolute;
+  top: 5px;
+  left: 12px;
+}
+
+.candle {
+  position: absolute;
+  width: 13px;
+  height: 48px;
+  bottom: 105px;
+  left: 83px;
+  border-radius: 4px;
+  background: repeating-linear-gradient(
+    45deg, #fff 0 6px, #ff60a8 6px 12px
+  );
+  z-index: 3;
+}
+
+.flame {
+  position: absolute;
+  width: 22px;
+  height: 30px;
+  left: -5px;
+  top: -28px;
+  background: radial-gradient(ellipse at bottom, #fff9ae, #ffab28 55%, #ff4777);
+  border-radius: 50% 50% 45% 45%;
+  transform: rotate(4deg);
+  filter: drop-shadow(0 0 12px #ffca50);
+  animation: flicker .45s infinite alternate;
+}
+
+@keyframes flicker {
+  from { transform: scale(1) rotate(-5deg); }
+  to { transform: scale(.85, 1.12) rotate(7deg); }
+}
+
+@keyframes cakeFloat {
+  0%, 100% { transform: translateY(0) rotateY(-7deg); }
+  50% { transform: translateY(-12px) rotateY(7deg); }
+}
+
+button, .upload-label {
+  border: none;
+  border-radius: 30px;
+  padding: 14px 21px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  display: inline-block;
+  transition: transform .2s;
+}
+
+button:active, .upload-label:active {
+  transform: scale(.95);
+}
+
+.open-btn {
+  color: #49105d;
+  background: linear-gradient(120deg, #ffe18a, #ffb1db);
+  box-shadow: 0 0 22px #ff88d9a0;
+  animation: pulse 1.8s infinite;
+}
+
+@keyframes pulse {
+  50% { box-shadow: 0 0 35px #ff88d9; }
+}
+
+#surprise {
+  display: none;
+  animation: reveal 1s ease;
+}
+
+@keyframes reveal {
+  from { opacity: 0; transform: translateY(25px) scale(.9); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+.message {
+  padding: 17px 12px;
+  margin: 20px 0;
+  line-height: 2;
+  border-radius: 18px;
+  background: #ffffff10;
+  border: 1px solid #ffffff30;
+}
+
+.photo-box {
+  margin: 20px auto;
+}
+
+#preview {
+  display: none;
+  width: min(100%, 230px);
+  max-height: 300px;
+  object-fit: cover;
+  border-radius: 20px;
+  border: 3px solid #ffe18a;
+  box-shadow: 0 0 25px #ff74c9;
+  margin: 15px auto;
+}
+
+.upload-label {
+  background: #ffffff20;
+  color: white;
+  border: 1px solid #ffffff60;
+  font-size: 14px;
+}
+
+input[type="file"] {
+  display: none;
+}
+
+#photoHint {
+  font-size: 13px;
+  color: #e9d9f5;
+}
+
+.heart, .confetti {
+  position: fixed;
+  top: -30px;
+  pointer-events: none;
+  z-index: 5;
+  animation: fall linear forwards;
+}
+
+.heart {
+  font-size: 23px;
+}
+
+@keyframes fall {
+  to {
+    transform: translateY(110vh) rotate(720deg);
+    opacity: 0;
+  }
+}
+
+.footer {
+  margin-top: 25px;
+  color: #e8c7ff;
+  font-size: 12px;
+}
+</style>
+</head>
+
+<body>
+<div class="container">
+  <main class="card">
+
+    <div class="tag">✨ A SPECIAL DAY ✨</div>
+
+    <h1>🎉 Happy Birthday 🎉</h1>
+
+    <div class="name">Nur Islam Tanha ❤️</div>
+
+    <p class="subtitle">
+      আজকের দিনটা শুধু তোমার!<br>
+      তোমার মুখে থাকুক সবসময় মিষ্টি হাসি।
+    </p>
+
+    <div class="cake-scene">
+      <div class="cake">
+        <div class="cake-bottom"></div>
+        <div class="cake-top"></div>
+        <div class="icing"></div>
+        <div class="candle">
+          <div class="flame"></div>
+        </div>
+      </div>
+    </div>
+
+    <button class="open-btn" id="openBtn" onclick="openSurprise()">
+      🎁 Open Your Surprise 🎁
+    </button>
+
+    <section id="surprise">
+      <h1>💖 Surprise! 💖</h1>
+
+      <div class="message">
+        <h2>প্রিয় Nur Islam Tanha 🥰</h2>
+        শুভ জন্মদিন! 🎂🎈<br><br>
+        তোমার জীবনের প্রতিটি দিন হয়ে উঠুক
+        আনন্দ, ভালোবাসা আর সফলতায় ভরা।<br><br>
+        তোমার সব সুন্দর স্বপ্ন পূরণ হোক,
+        সবসময় হাসিখুশি থেকো এবং সুস্থ থেকো। ❤️<br><br>
+        তোমার জন্য রইল অনেক অনেক দোয়া
+        ও অফুরন্ত ভালোবাসা। 🌹<br><br>
+        <strong>Once Again, Happy Birthday! 🎉</strong>
+      </div>
+
+      <div class="photo-box">
+        <label for="photoInput" class="upload-label">
+          📸 তোমার ছবি যোগ করো
+        </label>
+
+        <input id="photoInput" type="file" accept="image/*">
+
+        <img id="preview" alt="Birthday photo">
+
+        <p id="photoHint">
+          গ্যালারি থেকে একটি ছবি বেছে নাও ❤️
+        </p>
+      </div>
+
+      <div style="font-size:35px">
+        🎂 🎈 💝 🎉 🥳
+      </div>
+    </section>
+
+    <div class="footer">
+      Made with ❤️ just for Nur Islam Tanha
+    </div>
+  </main>
+</div>
+
+<script>
+function makeConfetti(count = 70) {
+  const items = ["🎉", "💖", "✨", "🎈", "💕", "🌟"];
+
+  for (let i = 0; i < count; i++) {
+    const el = document.createElement("span");
+    el.className = "confetti";
+    el.textContent = items[Math.floor(Math.random() * items.length)];
+    el.style.left = Math.random() * 100 + "vw";
+    el.style.animationDuration = (3 + Math.random() * 4) + "s";
+    el.style.animationDelay = Math.random() * 2 + "s";
+    el.style.fontSize = (14 + Math.random() * 18) + "px";
+
+    document.body.appendChild(el);
+    setTimeout(() => el.remove(), 10000);
+  }
+}
+
+function openSurprise() {
+  document.getElementById("surprise").style.display = "block";
+  document.getElementById("openBtn").style.display = "none";
+
+  makeConfetti(90);
+
+  document.getElementById("surprise").scrollIntoView({
+    behavior: "smooth",
+    block: "nearest"
+  });
+}
+
+document.getElementById("photoInput").addEventListener("change", function(e) {
+  const file = e.target.files[0];
+  if (!file) return;
+
+  if (!file.type.startsWith("image/")) {
+    alert("দয়া করে একটি ছবি নির্বাচন করো।");
+    return;
+  }
+
+  const reader = new FileReader();
+
+  reader.onload = function(event) {
+    const preview = document.getElementById("preview");
+    preview.src = event.target.result;
+    preview.style.display = "block";
+    document.getElementById("photoHint").textContent =
+      "তোমার ছবিটি যোগ করা হয়েছে! ❤️";
+  };
+
+  reader.readAsDataURL(file);
+});
+
+// Background floating hearts
+setInterval(() => {
+  const heart = document.createElement("span");
+  heart.className = "heart";
+  heart.textContent = ["❤️", "💗", "💕", "✨"][
+    Math.floor(Math.random() * 4)
+  ];
+  heart.style.left = Math.random() * 100 + "vw";
+  heart.style.animationDuration = (5 + Math.random() * 5) + "s";
+
+  document.body.appendChild(heart);
+  setTimeout(() => heart.remove(), 11000);
+}, 800);
+</script>
+</body>
+</html>
